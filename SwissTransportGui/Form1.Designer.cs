@@ -35,20 +35,16 @@ namespace SwissTransportGui
             this.toStation = new System.Windows.Forms.TextBox();
             this.tableConnections = new System.Windows.Forms.DataGridView();
             this.stationName = new System.Windows.Forms.TextBox();
-            this.trainName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Operator = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableConnections)).BeginInit();
             this.SuspendLayout();
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(292, 60);
+            this.searchButton.Location = new System.Drawing.Point(364, 95);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.Size = new System.Drawing.Size(171, 31);
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "Suche";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -56,87 +52,62 @@ namespace SwissTransportGui
             // 
             // fromStation
             // 
-            this.fromStation.Location = new System.Drawing.Point(130, 83);
+            this.fromStation.Location = new System.Drawing.Point(235, 146);
+            this.fromStation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fromStation.Name = "fromStation";
-            this.fromStation.Size = new System.Drawing.Size(100, 23);
+            this.fromStation.Size = new System.Drawing.Size(114, 27);
             this.fromStation.TabIndex = 1;
             // 
             // toStation
             // 
-            this.toStation.Location = new System.Drawing.Point(407, 83);
+            this.toStation.Location = new System.Drawing.Point(549, 146);
+            this.toStation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.toStation.Name = "toStation";
-            this.toStation.Size = new System.Drawing.Size(100, 23);
+            this.toStation.Size = new System.Drawing.Size(114, 27);
             this.toStation.TabIndex = 2;
             // 
             // tableConnections
             // 
+            this.tableConnections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableConnections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableConnections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.trainName,
-            this.Category,
-            this.Number,
-            this.Operator,
-            this.To,
-            this.Stop});
-            this.tableConnections.Location = new System.Drawing.Point(52, 213);
+            this.tableConnections.Location = new System.Drawing.Point(12, 284);
+            this.tableConnections.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableConnections.Name = "tableConnections";
+            this.tableConnections.RowHeadersWidth = 51;
             this.tableConnections.RowTemplate.Height = 25;
-            this.tableConnections.Size = new System.Drawing.Size(663, 195);
+            this.tableConnections.Size = new System.Drawing.Size(890, 303);
             this.tableConnections.TabIndex = 3;
             // 
             // stationName
             // 
-            this.stationName.Location = new System.Drawing.Point(52, 184);
+            this.stationName.Location = new System.Drawing.Point(12, 245);
+            this.stationName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.stationName.Name = "stationName";
-            this.stationName.Size = new System.Drawing.Size(100, 23);
+            this.stationName.Size = new System.Drawing.Size(218, 27);
             this.stationName.TabIndex = 4;
             // 
-            // trainName
+            // arrivalName
             // 
-            this.trainName.DataPropertyName = "Name";
-            this.trainName.HeaderText = "Zugname";
-            this.trainName.Name = "trainName";
-            // 
-            // Category
-            // 
-            this.Category.DataPropertyName = "Category";
-            this.Category.HeaderText = "Zug Typ";
-            this.Category.Name = "Category";
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "Zugnummer";
-            this.Number.Name = "Number";
-            // 
-            // Operator
-            // 
-            this.Operator.DataPropertyName = "Operator";
-            this.Operator.HeaderText = "Firma";
-            this.Operator.Name = "Operator";
-            // 
-            // To
-            // 
-            this.To.DataPropertyName = "To";
-            this.To.HeaderText = "Nach";
-            this.To.Name = "To";
-            // 
-            // Stop
-            // 
-            this.Stop.DataPropertyName = "Stop";
-            this.Stop.HeaderText = "Ankunftszeit";
-            this.Stop.Name = "Stop";
+            this.arrivalName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.arrivalName.Location = new System.Drawing.Point(684, 245);
+            this.arrivalName.Name = "arrivalName";
+            this.arrivalName.Size = new System.Drawing.Size(218, 27);
+            this.arrivalName.TabIndex = 5;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.arrivalName);
             this.Controls.Add(this.stationName);
             this.Controls.Add(this.tableConnections);
             this.Controls.Add(this.toStation);
             this.Controls.Add(this.fromStation);
             this.Controls.Add(this.searchButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -153,11 +124,6 @@ namespace SwissTransportGui
         private TextBox toStation;
         private DataGridView tableConnections;
         private TextBox stationName;
-        private DataGridViewTextBoxColumn trainName;
-        private DataGridViewTextBoxColumn Category;
-        private DataGridViewTextBoxColumn Number;
-        private DataGridViewTextBoxColumn Operator;
-        private DataGridViewTextBoxColumn To;
-        private DataGridViewTextBoxColumn Stop;
+        private TextBox arrivalName;
     }
 }
