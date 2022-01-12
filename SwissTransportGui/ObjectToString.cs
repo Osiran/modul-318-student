@@ -68,7 +68,7 @@ namespace SwissTransportGui
             if(string.IsNullOrEmpty(toStation))
             {
                 CreateStationTableList();
-            }else {
+            }else if(transport.GetConnections(fromStation, toStation).ConnectionList.Count>0) {
                 var rout = transport.GetConnections(fromStation, toStation).ConnectionList;
             foreach (var connection in rout)
                 {
@@ -84,8 +84,11 @@ namespace SwissTransportGui
                     { 
                         departure = connection.From.Departure.Value.ToString("HH:mm");
                     }
+                    if (connection.From.Platform != null) 
+                    { 
+                        platform = connection.From.Platform.ToString();
+                    }
                     
-                    platform = connection.From.Platform.ToString();
                     duration = connection.Duration;
                     List<string> connectionString = new List<string>() { };
                     connectionString.Add(arrival);
