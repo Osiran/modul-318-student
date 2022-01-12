@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace SwissTransportGui
 {
     internal static class Program

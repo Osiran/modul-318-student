@@ -1,5 +1,7 @@
 ﻿using SwissTransport.Models;
 using SwissTransport.Core;
+using System;
+using System.Collections.Generic;
 
 namespace SwissTransportGui
 {

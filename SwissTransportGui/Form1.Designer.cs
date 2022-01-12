@@ -1,4 +1,6 @@
-﻿namespace SwissTransportGui
+﻿using System.Windows.Forms;
+
+namespace SwissTransportGui
 {
     partial class Form1
     {

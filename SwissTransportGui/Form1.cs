@@ -1,14 +1,16 @@
 using SwissTransport.Models;
 using SwissTransport.Core;
 using System.ComponentModel;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using System;
 
 namespace SwissTransportGui
 {
     public partial class Form1 : Form
     {
-        BindingList<StationBoard> rootBoard = new();
-
-        DataGridData dataGridData = new DataGridData();
+        BindingList<List<string>> rootBoard = new();
+        
         ITransport transport = new Transport();
 
         public Form1()
@@ -22,10 +24,23 @@ namespace SwissTransportGui
             {
                 
             }
-            else
+            else if(string.IsNullOrEmpty(toStation.Text))
             {
-                stationName = transport.GetStationBoard(fromStation, "id").Station.Name;
-
+                stationName.Text = transport.GetStationBoard(fromStation.Text, "id").Station.Name;
+                ObjectToString stringList = new(transport.GetStationBoard(fromStation.Text, "id").Station.Name);                
+                foreach(List<string> stationBoard in stringList.StationBoardString)
+                {
+                    rootBoard.Add(stationBoard);
+                }
+            }
+            else if(string.IsNullOrEmpty(toStation.Text)&& string.IsNullOrEmpty(fromStation.Text))
+            {
+                stationName.Text = transport.GetStationBoard(fromStation.Text, "id").Station.Name;
+                ObjectToString stringList = new(transport.GetStationBoard(fromStation.Text, "id").Station.Name, transport.GetStationBoard(toStation.Text, "id").Station.Name);
+                foreach (List<string> rout in stringList.ConnectionString)
+                {
+                    rootBoard.Add(rout);
+                }
             }
             
         }
